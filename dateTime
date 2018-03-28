@@ -1,0 +1,27 @@
+# 时间戳及相关转换用到的方法
+
+var dayStamp = 24*60*60*1000;         // 一天的毫秒数
+var weekStamp = 7*24*60*60*1000;      // 一周的毫秒数
+var monthStamp = 30*7*24*60*60*1000;  // 一个月的毫秒数
+
+// 获取当前日期并将其转化成时间戳的形式
+function formatTimeStamp() {
+  var timeStamp = new Date().getTime();
+}
+
+// 将获取当前时间转换成yy-MM-dd的形式 
+function formatTime() { 
+  var date = new Date();
+     var years = date.getFullYear(); 
+     var months = date.getMonth() + 1;
+     var days = date.getDate();
+     var monthsStr = months + "";
+     var daysStr = days + "";
+     if(months < 10) {
+       monthsStr = 0 + monthsStr;
+     }
+     if(days < 10) {
+       daysStr = 0 + daysStr;
+     }
+     return (years + "-" + monthsStr + "-" + daysStr);  
+}
